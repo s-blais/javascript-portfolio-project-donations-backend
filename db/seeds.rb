@@ -5,3 +5,54 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+jm_trust = Fund.create(name: "JM Trust")
+em_trust = Fund.create(name: "EM Trust")
+tm_roth = Fund.create(name: "TM Roth IRA")
+tm_im = Fund.create(name: "TM IM")
+
+mms = Transaction.create(
+  recipient: "Norristown Medical Center",
+	contact: "Susan Johns",
+	amount: 25000,
+	date: "2020-11-22",
+	notes: "Cardiac wing",
+  fund_id: em_trust.id
+)
+  
+tc = Transaction.create(
+  recipient: "Real Colors Inc",
+	contact: "Patrick Dunnings",
+	amount: 10000,
+	date: "2020-11-19",
+	notes: "For operations",
+  fund_id: tm_roth.id
+)
+
+ev = Transaction.create(
+  recipient: "Eva's Town",
+	contact: "Reverend Sandy",
+	amount: 10000,
+	date: "2020-11-19",
+	notes: "For operations",
+  fund_id: em_trust.id
+)
+
+mms = Transaction.create(
+  recipient: "Hilton Mannah",
+	contact: "Hilton Mannah",
+	amount: 15000,
+	date: "2020-07-01",
+	notes: "Deduct from lifetime",
+  fund_id: tm_im.id
+)
+
+soca = Transaction.create(
+  recipient: "SOCA",
+	contact: "Treasurer",
+	amount: 150000,
+	date: "2020-09-23",
+	notes: "Policy WA0001243",
+  fund_id: em_trust.id
+)

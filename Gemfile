@@ -25,6 +25,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# hey it appears that fast_jsonapi has halted development and its successor is jsonapi-serializer!
 gem 'fast_jsonapi', '~> 1.5'
 
 group :development, :test do

@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Fund.destroy_all
+# Transaction.destroy_all #if all Transactions have fund_id's and Fund dependents are destroyed, is this necessary?
 
 jm_trust = Fund.create(name: "JM Trust")
 em_trust = Fund.create(name: "EM Trust")

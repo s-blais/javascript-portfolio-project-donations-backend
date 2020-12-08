@@ -16,8 +16,8 @@ class Api::V1::TransactionsController < ApplicationController
 
   private
 
-  transactions_params(params) #these may need adjusting 
-    def params.require(:transaction).permit(:recipient, :contact, :amount :date, :notes, :fund_id)
-    end
+  # transactions_params(params) #these may need adjusting 
+  #   def params.require(:transaction).permit(:recipient, :contact, :amount :date, :notes, :fund_id)
+  #   end
 
 end

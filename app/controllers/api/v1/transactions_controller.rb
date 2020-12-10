@@ -1,6 +1,6 @@
 class Api::V1::TransactionsController < ApplicationController
   def index
-    transactions = Transaction.all
+    transactions = Transaction.all.sort_by{|t| t[:date]}.reverse
     # render json: transactions, include: :fund
     render json: TransactionSerializer.new(transactions)
   end

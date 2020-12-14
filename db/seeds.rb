@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Fund.destroy_all
-# Transaction.destroy_all #if all Transactions have fund_id's and Fund dependents are destroyed, is this necessary?
+# Donation.destroy_all #if all Donations have fund_id's and Fund dependents are destroyed, is this necessary?
 
 jm_trust = Fund.create(name: "JM Trust")
 em_trust = Fund.create(name: "EM Trust")
 tm_roth = Fund.create(name: "TM Roth IRA")
 tm_im = Fund.create(name: "TM IM")
 
-mms = Transaction.create(
+mms = Donation.create(
   recipient: "Norristown Medical Center",
 	contact: "Susan Johns",
 	amount: 25000,
@@ -23,7 +23,7 @@ mms = Transaction.create(
   fund_id: em_trust.id
 )
   
-tc = Transaction.create(
+tc = Donation.create(
   recipient: "Real Colors Inc",
 	contact: "Patrick Dunnings",
 	amount: 10000,
@@ -32,7 +32,7 @@ tc = Transaction.create(
   fund_id: tm_roth.id
 )
 
-ev = Transaction.create(
+ev = Donation.create(
   recipient: "Eva's Town",
 	contact: "Reverend Sandy",
 	amount: 10000,
@@ -41,7 +41,7 @@ ev = Transaction.create(
   fund_id: em_trust.id
 )
 
-mms = Transaction.create(
+mms = Donation.create(
   recipient: "Hilton Mannah",
 	contact: "Hilton Mannah",
 	amount: 15000,
@@ -50,7 +50,7 @@ mms = Transaction.create(
   fund_id: tm_im.id
 )
 
-soca = Transaction.create(
+soca = Donation.create(
   recipient: "SOCA",
 	contact: "Treasurer",
 	amount: 150000,

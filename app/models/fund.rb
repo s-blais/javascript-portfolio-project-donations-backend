@@ -1,3 +1,3 @@
 class Fund < ApplicationRecord
-  has_many :transactions, dependent: :destroy
+  has_many :donations, dependent: :destroy
 end

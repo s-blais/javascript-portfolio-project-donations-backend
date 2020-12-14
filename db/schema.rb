@@ -10,18 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_190525) do
+ActiveRecord::Schema.define(version: 2020_12_14_203107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "funds", force: :cascade do |t|
-    t.text "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "transactions", force: :cascade do |t|
+  create_table "donations", force: :cascade do |t|
     t.string "recipient"
     t.string "contact"
     t.integer "amount"
@@ -30,8 +24,14 @@ ActiveRecord::Schema.define(version: 2020_12_05_190525) do
     t.bigint "fund_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["fund_id"], name: "index_transactions_on_fund_id"
+    t.index ["fund_id"], name: "index_donations_on_fund_id"
   end
 
-  add_foreign_key "transactions", "funds"
+  create_table "funds", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "donations", "funds"
 end

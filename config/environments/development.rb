@@ -49,4 +49,9 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # this supposedly clears Rails' "Blocked host: localhost" error I encountered within Postman when trying to use Postman to emulate fetches and rails was saying something about HTTP parse error. Neither line seemed to make a difference. I got the Postman requests working another way
+  # config.hosts << "localhost"
+  # config.hosts << "#{`hostname -s`.strip}.local"
+
 end

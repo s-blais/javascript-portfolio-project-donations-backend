@@ -21,7 +21,11 @@ class Api::V1::DonationsController < ApplicationController
     else
       render json: {errors: donation.errors.full_messages}, status: :unprocessible_entity
     end
+  end
 
+  def destroy
+    donation = Donation.find_by_id(params[:id])
+    donation.destroy
   end
 
   private
